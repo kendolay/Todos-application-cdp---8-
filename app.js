@@ -49,7 +49,7 @@ const hasStatusProperty = (requestQuery) => {
 app.get("/todos/", async (request, response) => {
   let data = null;
   let getTodosQuery = "";
-  const { search_q = "", priority, status } = request.query:
+  const { search_q = "", priority, status } = request.query;
 
   switch (true) {
     case hasPriorityAndStatusProperties(request.query):
@@ -111,7 +111,7 @@ app.get("/todos/:todoId/", async (request, response) => {
   response.send(todo);
 });
 
-app.post("/todos/", async (request. response) => {
+app.post("/todos", async (request. response) => {
   const { id, todo, priority, status } = request.body;
   const postTodoQuery = `
   INSERT INTO
